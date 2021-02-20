@@ -4,15 +4,25 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: 软件 | H1&#39;s Blog</title>
+  <title>[转] wsl导致vmmem占用高解决办法 | H1&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="H1&#39;s Blog">
-<meta property="og:url" content="https://blog.h1msk.cc/tags/%E8%BD%AF%E4%BB%B6/index.html">
+  <meta name="description" content="版权声明：本文为CSDN用户「文艺圈不知名刘先生」的原创文章，遵循 CC 4.0 BY 版权协议，转载请附上原文出处链接及本声明。 原文链接：https:&#x2F;&#x2F;blog.csdn.net&#x2F;huiruwei1020&#x2F;article&#x2F;details&#x2F;107631502">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[转] wsl导致vmmem占用高解决办法">
+<meta property="og:url" content="https://blog.h1msk.cc/2021/02/20/%E8%BD%AC-wsl%E5%AF%BC%E8%87%B4vmmem%E5%8D%A0%E7%94%A8%E9%AB%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/index.html">
 <meta property="og:site_name" content="H1&#39;s Blog">
+<meta property="og:description" content="版权声明：本文为CSDN用户「文艺圈不知名刘先生」的原创文章，遵循 CC 4.0 BY 版权协议，转载请附上原文出处链接及本声明。 原文链接：https:&#x2F;&#x2F;blog.csdn.net&#x2F;huiruwei1020&#x2F;article&#x2F;details&#x2F;107631502">
 <meta property="og:locale" content="cn">
+<meta property="og:image" content="https://blog.h1msk.cc/2021/02/20/%E8%BD%AC-wsl%E5%AF%BC%E8%87%B4vmmem%E5%8D%A0%E7%94%A8%E9%AB%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/1.png">
+<meta property="og:image" content="https://blog.h1msk.cc/2021/02/20/%E8%BD%AC-wsl%E5%AF%BC%E8%87%B4vmmem%E5%8D%A0%E7%94%A8%E9%AB%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/2.png">
+<meta property="og:image" content="https://blog.h1msk.cc/2021/02/20/%E8%BD%AC-wsl%E5%AF%BC%E8%87%B4vmmem%E5%8D%A0%E7%94%A8%E9%AB%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/3.png">
+<meta property="og:image" content="https://blog.h1msk.cc/2021/02/20/%E8%BD%AC-wsl%E5%AF%BC%E8%87%B4vmmem%E5%8D%A0%E7%94%A8%E9%AB%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/4.png">
+<meta property="article:published_time" content="2021-02-20T15:42:57.000Z">
+<meta property="article:modified_time" content="2021-02-20T16:48:39.591Z">
 <meta property="article:author" content="H1MSK">
+<meta property="article:tag" content="WSL">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.h1msk.cc/2021/02/20/%E8%BD%AC-wsl%E5%AF%BC%E8%87%B4vmmem%E5%8D%A0%E7%94%A8%E9%AB%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/1.png">
   
     <link rel="alternative" href="/atom.xml" title="H1&#39;s Blog" type="application/atom+xml">
   
@@ -121,39 +131,121 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/04/29/Typora-%E5%AE%89%E8%A3%85%E5%BC%95%E8%B7%AF/" class="archive-article-date">
-  <time datetime="2020-04-29T03:45:45.000Z" itemprop="datePublished">Apr 29</time>
+      <section id="main"><article id="post-转-wsl导致vmmem占用高解决办法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/02/20/%E8%BD%AC-wsl%E5%AF%BC%E8%87%B4vmmem%E5%8D%A0%E7%94%A8%E9%AB%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="article-date">
+  <time datetime="2021-02-20T15:42:57.000Z" itemprop="datePublished">2021-02-20</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/29/Typora-%E5%AE%89%E8%A3%85%E5%BC%95%E8%B7%AF/">Typora 安装引路</a>
+    <h1 class="article-title" itemprop="name">
+      [转] wsl导致vmmem占用高解决办法
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>版权声明：本文为<a href="https://blog.csdn.net/" target="_blank" rel="noopener">CSDN</a>用户「<a href="https://blog.csdn.net/huiruwei1020" target="_blank" rel="noopener">文艺圈不知名刘先生</a>」的原创文章，遵循 CC 4.0 BY 版权协议，转载请附上原文出处链接及本声明。</p>
+<p>原文链接：<a href="https://blog.csdn.net/huiruwei1020/article/details/107631502" target="_blank" rel="noopener">https://blog.csdn.net/huiruwei1020/article/details/107631502</a></p>
+<a id="more"></a>
+
+<hr>
+<p>自从装了wsl我这个年迈的电脑就更加吃力，尤其是内存基本上都要占到90%以上，打开任务管理器一看内存一半以上都是被vmmem吃掉了，于是在网上寻找解决办法，并记录优化过程。</p>
+<h2 id="定期执行缓存删除"><a href="#定期执行缓存删除" class="headerlink" title="定期执行缓存删除"></a>定期执行缓存删除</h2><ul>
+<li><p>在WSL bash上，执行以下命令，并进入编辑模式</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo crontab -e -u root</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>第一次运行会让你选择编译器，我选择了nano，感觉更加友好。</p>
+</blockquote>
+<p>  并添加以下行：</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*/15 * * * * sync; echo 3 &gt; /proc/sys/vm/drop_caches; touch /root/drop_caches_last_run</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>*/15 表示将每15分钟执行一次。您可以根据需要更改它</p>
+<blockquote>
+<p>转载时注： <code>crontab</code>命令参考<a href="https://www.runoob.com/linux/linux-comm-crontab.html" target="_blank" rel="noopener">菜鸟教程</a></p>
+</blockquote>
+</blockquote>
+  <img src="/2021/02/20/%E8%BD%AC-wsl%E5%AF%BC%E8%87%B4vmmem%E5%8D%A0%E7%94%A8%E9%AB%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/1.png" class="" title="1.png">
+</li>
+<li><p>自动启动cron服务</p>
+<p>  在~/.bashrc 上添加以下行，允许启动cron服务而无需输入root密码，</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo nano ~/.bashrc</span></span><br></pre></td></tr></table></figure>
+
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ -z "$(ps -ef | grep cron | grep -v grep)" ] &amp;&amp; sudo /etc/init.d/cron start &amp;&gt; /dev/null</span><br></pre></td></tr></table></figure>
+
+  <img src="/2021/02/20/%E8%BD%AC-wsl%E5%AF%BC%E8%87%B4vmmem%E5%8D%A0%E7%94%A8%E9%AB%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/2.png" class="" title="2.png">
+</li>
+<li><p>在WSL bash上执行并添加以下行：</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo visudo</span></span><br></pre></td></tr></table></figure>
+
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ALL=NOPASSWD: /etc/init.d/cron start</span><br></pre></td></tr></table></figure>
+
+  <img src="/2021/02/20/%E8%BD%AC-wsl%E5%AF%BC%E8%87%B4vmmem%E5%8D%A0%E7%94%A8%E9%AB%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/3.png" class="" title="3.png">
+
+
+</li>
+</ul>
+<h2 id="硬限制最大内存"><a href="#硬限制最大内存" class="headerlink" title="硬限制最大内存"></a>硬限制最大内存</h2><ul>
+<li><p>打开文件夹，在地址栏输入<code>%UserProfile%</code>，并回车。</p>
+</li>
+<li><p>新建文件<code>.wslconfig</code>，并编辑内容：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[wsl2]</span><br><span class="line">memory&#x3D;4GB</span><br><span class="line">swap&#x3D;8GB</span><br><span class="line">localhostForwarding&#x3D;true</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="使配置生效"><a href="#使配置生效" class="headerlink" title="使配置生效"></a>使配置生效</h2><p>要确保所有更改都生效，请在<code>powershell</code>上执行<code>wsl --shutdown</code>。然后重新打开您的WSL终端.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> wsl -<span class="literal">-shutdown</span></span><br></pre></td></tr></table></figure>
+
+<p>在wsl终端上可以通过查看<code>/root/drop_caches_last_run</code>上次修改日期来检查cron作业是否正在相应地运行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo <span class="built_in">stat</span> -c <span class="string">'%y'</span> /root/drop_caches_last_run</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2021/02/20/%E8%BD%AC-wsl%E5%AF%BC%E8%87%B4vmmem%E5%8D%A0%E7%94%A8%E9%AB%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/4.png" class="" title="4.png">
+
+<blockquote>
+<p>上面设置的十五分钟一次，你可以计时看看有没有记录。</p>
+</blockquote>
+<h2 id="ISSUE"><a href="#ISSUE" class="headerlink" title="ISSUE"></a>ISSUE</h2><p><a href="https://github.com/microsoft/WSL/issues/4166" target="_blank" rel="noopener">这个问题，在github以上已经大量反馈，点击这里查看issue详情</a></p>
+<hr>
+<p>Enjoy it !</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://blog.h1msk.cc/2021/02/20/%E8%BD%AC-wsl%E5%AF%BC%E8%87%B4vmmem%E5%8D%A0%E7%94%A8%E9%AB%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" data-id="ckldwvqjp000092u444nwcyj8" class="article-share-link" data-share="baidu" data-title="[转] wsl导致vmmem占用高解决办法">Share</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WSL/" rel="tag">WSL</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/02/08/%E5%85%B3%E4%BA%8E%E3%80%8A%E6%97%A0%E8%81%8C%E8%BD%AC%E7%94%9F%E3%80%8B%E5%BB%B6%E4%BC%B8%E5%87%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83%E7%82%B9/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【学步001】关于番剧《无职转生》近期的风波延伸出的一些思考点</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
       
